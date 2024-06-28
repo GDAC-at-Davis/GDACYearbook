@@ -1,2 +1,2 @@
-# GradYearbook
-An annual yearbook for graduating members in the form of a game!
+# GDACYearbook
+An annual yearbook for graduating members, except its a game

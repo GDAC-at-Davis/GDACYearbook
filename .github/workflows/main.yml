@@ -29,7 +29,7 @@ jobs:
       - name: Zip Source
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r ${{env.PROJ_DIR}}.zip ${{env.PROJ_DIR}}
+          args: zip -qq -r ${{env.PROJ_DIR}}.zip ../${{env.PROJ_DIR}}
           
       - name: Download Butler
         run: |

@@ -24,6 +24,8 @@ jobs:
         run: |
           pwd
           tree -L 4
+          cd ..
+          tree -L 4
       
       # Zip before uploading to itch isn't required, but lower upload size
       - name: Zip Source

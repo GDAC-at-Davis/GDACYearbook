@@ -1,32 +1,6 @@
 To return to the main file after ending a bitsy game:
 
-At the end of this callback:
-
-```
-function startEndingDialog(ending) {
-    ...
-
-    startDialog(
-        endingDialogStr,
-        endingScriptId,
-        function () {
-            var isLocked = ending.property && ending.property.locked === true;
-            if (isLocked) {
-                isEnding = false;
-
-                // if the ending was cancelled, restart the music
-                // todo : should it resume from where it started? (right now it starts over)
-                if (tmpTuneId && soundPlayer && !soundPlayer.isTunePlaying()) {
-                    soundPlayer.playTune(tune[tmpTuneId]);
-                }
-            }
-        },
-        ending);
-
-}
-```
-
-replace with
+Modify the ending dialog callback to return to `index.html` when the dialog ends.
 
 ```
 
@@ -44,6 +18,7 @@ startDialog(
                 soundPlayer.playTune(tune[tmpTuneId]);
             }
         }
+        // ADD THIS ELSE CASE
         else
         {
             // Go back to index.html when the ending dialog is finished
@@ -54,5 +29,3 @@ startDialog(
     ending);
 
 ```
-
-So after the bitsy game ends, it returns to the select page.
